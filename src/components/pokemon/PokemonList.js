@@ -3,6 +3,7 @@ import PokemonCard from "./PokemonCard";
 import styled from "styled-components";
 import axios from "axios";
 import InfiniteScroll from "react-infinite-scroller";
+import ScrollAnimation from "react-animate-on-scroll";
 
 export default class PokemonList extends Component {
   state = {
