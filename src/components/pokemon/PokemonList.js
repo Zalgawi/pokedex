@@ -3,16 +3,13 @@ import PokemonCard from "./PokemonCard";
 import styled from "styled-components";
 import axios from "axios";
 import InfiniteScroll from "react-infinite-scroller";
-import ScrollAnimation from "react-animate-on-scroll";
 
 export default class PokemonList extends Component {
   state = {
-    url: "https://pokeapi.co/api/v2/pokemon?limit=20&offset=0.",
-    pokemon: null,
+    url: "https://pokeapi.co/api/v2/pokemon/?limit=20",
+    pokemon: [],
     itemsCountPerPage: 20,
-    activePage: 1,
-    count: 365,
-    previous: null
+    activePage: 1
   };
 
   loadPokemon = () => {
@@ -20,6 +17,7 @@ export default class PokemonList extends Component {
       .get(this.state.url)
       .then(res => {
         this.setState(prevState => {
+          const pokemon = prevState.pokemon;
           return {
             pokemon: [...prevState.pokemon, ...res.data.results],
             url: res.data.next
@@ -44,9 +42,10 @@ export default class PokemonList extends Component {
         {this.state.pokemon ? (
           <div className="row">
             <InfiniteScroll
-              pageStart={0}
+              pageStart={1}
               loadMore={this.loadPokemon}
               hasMore={true}
+              threshold={0}
               loader={
                 <div className="loader" key={0}>
                   Loading ...
