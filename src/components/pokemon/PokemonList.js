@@ -7,9 +7,10 @@ import ScrollAnimation from "react-animate-on-scroll";
 
 export default class PokemonList extends Component {
   state = {
-    url: "https://pokeapi.co/api/v2/pokemon?limit=60&offset=0.",
+    url: "https://pokeapi.co/api/v2/pokemon?limit=20&offset=0.",
     pokemon: null,
-
+    itemsCountPerPage: 20,
+    activePage: 1,
     count: 365,
     previous: null
   };
