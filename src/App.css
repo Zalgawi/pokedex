@@ -1,0 +1,36 @@
+.navbar {
+  background-color: #ef5350 !important;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 4rem;
+  min-height: 100vh;
+  background-color: #bff9ff;
+  border-radius: 10px;
+  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.22), 0 18px 45px rgba(0, 0, 0, 0.22);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d7d4d4;
+  border-radius: 10px;
+}
+
+/*.template {
+
+
+  width: 650px;
+  height: 400px;
+
+  
+}*/
