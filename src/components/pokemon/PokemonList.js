@@ -45,7 +45,7 @@ export default class PokemonList extends Component {
             <InfiniteScroll
               pageStart={1}
               loadMore={this.loadPokemon}
-              hasMore={true}
+              hasMore={this.state.url ? true : false}
               threshold={0}
               loader={
                 <div className="loader" key={0}>
